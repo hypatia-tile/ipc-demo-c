@@ -7,11 +7,20 @@
 #include <sys/un.h>
 #include <unistd.h>
 
+/**
+ * A simple error handling function
+ * @param msg The error message to display
+ * Exits the program with status 1 after printing the error message
+ * Iplicitly depends on errno being set appropriately
+ */
 static void die(const char *msg) {
   perror(msg);
   exit(1);
 }
 
+/**
+ * A simple IPC server using Unix domain sockets
+ */
 int main(void) {
   const char *path = "./ipc.sock";
 

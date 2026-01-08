@@ -11,7 +11,7 @@
  * A simple error handling function
  * @param msg The error message to display
  * Exits the program with status 1 after printing the error message
- * Iplicitly depends on errno being set appropriately
+ * Inplicitly depends on errno being set appropriately
  */
 static void die(const char *msg) {
   perror(msg);

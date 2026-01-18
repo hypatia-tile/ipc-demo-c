@@ -40,14 +40,12 @@ someFunc = withSocketsDo $ do
 
     putStrLn "server listening on ./ipc.sock"
 
-    putStrLn "server listening on ./ipc.sock"
-
     forever $ do
       (conn, _peer) <- accept sock
-      void $ handdleClient conn
+      void $ handleClient conn
 
-handdleClient :: Socket -> IO ()
-handdleClient conn =
+handleClient :: Socket -> IO ()
+handleClient conn =
   finally
     ( do
         -- Read "some bytes". We'll treat it as one line-ish message like the C version.

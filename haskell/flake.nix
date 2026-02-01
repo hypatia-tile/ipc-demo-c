@@ -23,6 +23,7 @@
         commonTools = [
           hp.ghc
           hp.cabal-install
+          hp.hoogle
           hp.haskell-language-server
           hp.ghcid
           hp.ormolu
